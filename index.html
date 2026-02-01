@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-screen flex flex-col justify-center items-center relative select-none p-4">
+
+    <div id="heart-bg" class="absolute inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+    <div id="step-1" class="z-10 text-center flex flex-col items-center w-full max-w-2xl transition-opacity duration-500">
+        <div class="mb-6 relative">
+            <img id="main-gif" 
+                 src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" 
+                 alt="Cute Bear" 
+                 class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-xl shadow-2xl border-4 border-white transition-all duration-300 bg-rose-50"
+                 onerror="this.src='https://placehold.co/300x300/pink/white?text=Bear+Loading...'"
+            >
+        </div>
+        <h1 id="question-text" class="handwritten text-4xl md:text-6xl text-rose-600 font-bold drop-shadow-sm mb-12 transition-all duration-300 leading-tight">
+            Will you be my Valentine?
+        </h1>
+        <div id="button-container" class="w-full flex flex-wrap justify-center items-start gap-8 relative min-h-[200px]">
+            <button id="yes-btn" class="bg-rose-500 hover:bg-rose-600 text-white text-2xl font-bold py-3 px-10 rounded-full shadow-lg border-b-4 border-rose-700 active:border-b-0 active:translate-y-1 z-20 whitespace-nowrap">
+                Yes 💖
+            </button>
+            <button id="no-btn" class="bg-white hover:bg-gray-100 text-rose-500 text-xl font-bold py-3 px-8 rounded-full shadow-lg border-2 border-rose-200 z-30 whitespace-nowrap">
+                No
+            </button>
+        </div>
+    </div>
+
+    <div id="step-2" class="hidden z-20 w-full flex-col items-center justify-center h-full absolute inset-0">
+        <div id="gift-box-container" class="flex flex-col items-center cursor-pointer transition-transform hover:scale-105">
+            <div id="gift-box" class="gift-container text-[100px] md:text-[150px] drop-shadow-2xl">
+                🎁
+            </div>
+            <p id="click-instruction" class="text-rose-400 font-bold animate-pulse mt-4 text-xl">Click to Open!</p>
+        </div>
+
+        <div id="message-container" class="hidden flex-col items-center text-center max-w-lg px-4 fade-in z-30 mt-4">
+            <img id="success-gif"
+                 src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" 
+                 class="w-64 h-64 object-cover rounded-xl shadow-2xl border-4 border-white mb-8 bg-rose-50"
+                 alt="Success Bear">
+            
+            <h1 class="handwritten text-5xl text-rose-600 mb-6 drop-shadow-sm">Yayyy! ❤️</h1>
+            
+            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-xl border-2 border-rose-200 w-full">
+                <p class="text-xl md:text-2xl text-gray-700 font-nunito leading-relaxed">
+                    I knew you'd say yes! <span id="eventually-text" class="text-rose-500 font-bold text-lg"></span><br>
+                    You make my world brighter and my heart happier. <br>
+                    <span class="font-bold text-rose-500">I love you!</span>
+                </p>
+            </div>
+            
+            <p class="mt-8 text-rose-400 text-sm font-bold animate-bounce uppercase tracking-widest">
+                👇 Pop the balloons! 👇
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

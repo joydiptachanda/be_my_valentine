@@ -1,0 +1,77 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #ffe4e6;
+    overflow: hidden;
+    touch-action: none;
+}
+.handwritten { font-family: 'Pacifico', cursive; }
+
+/* Smooth transition for the YES button */
+#yes-btn { 
+    transition: transform 0.2s ease-out; 
+    transform-origin: top; 
+}
+
+/* Slower movement for the NO button */
+#no-btn {
+    transition: top 0.6s ease, left 0.6s ease;
+    position: relative;
+}
+
+/* Floating hearts background */
+.heart-bg {
+    position: absolute; color: #f43f5e; opacity: 0.3;
+    animation: float 6s linear infinite; pointer-events: none; z-index: 0;
+}
+
+/* GIFT BOX ANIMATIONS */
+.gift-container {
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 40;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.open-gift {
+    animation: shake 0.5s;
+}
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+/* BALLOON GAME */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    cursor: crosshair;
+    animation: floatUp linear forwards;
+    font-size: 50px;
+    user-select: none;
+    z-index: 100;
+    padding: 20px; 
+    margin: -20px;
+}
+@keyframes floatUp {
+    to { transform: translateY(-120vh) rotate(360deg); }
+}
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+.hidden { display: none !important; }
+.fade-in { animation: fadeIn 1s forwards; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Image Placeholder Loading State */
+img {
+    transition: opacity 0.3s ease-in-out;
+}
+img[src=""] {
+    opacity: 0;
+}
